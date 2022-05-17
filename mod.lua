@@ -1,3 +1,5 @@
+local modEnvironment = require "time_of_day_cycle"
+
 function data()
     return {
         info    = {
@@ -16,7 +18,7 @@ function data()
         },
         options = {},
         runFn   = function(settings, modParams)
-
+            modEnvironment.setDayTime("night")
         end
         -- postRunFn = function (settings, params) ...
     }
