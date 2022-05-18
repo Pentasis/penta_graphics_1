@@ -93,8 +93,6 @@ local function setDusk(filename, environment)
 
         depthColorTex = "environment/sunset/depthColor.dds",
         extinctionCoeff = .05,
-
-        waveFoamTex = "environment/water_wave_foam.dds",
     }
 
     environment.skyBox = {

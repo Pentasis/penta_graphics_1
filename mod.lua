@@ -1,4 +1,4 @@
-local modEnvironment = require "time_of_day_cycle"
+local modEnvironment = require "time_of_day"
 
 function data()
     return {
