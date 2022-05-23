@@ -16,20 +16,23 @@ function data()
             severityRemove = "CRITICAL",
             params         = {
                 {
-                    key = "time_of_day",
+                    key = "timeofday",
                     name = "Time of day",
+                    uiType = "BUTTON",
                     values = { "Morning", "Noon", "Dusk", "Night" },
                     defaultIndex = 1,
                 },
-            }
+            },
         },
-        options = {},
+        options = {
+            daytime = { { "morning", _("Morning") }, { "noon", _("Noon") }, { "dusk", _("Dusk") }, { "night", _("Night") } },
+        },
         runFn   = function(settings, modParams)
             local params = modParams[getCurrentModId()]
 
             local values = { "morning", "noon", "dusk", "night" }
 
-            modEnvironment.setDayTime(values[params["time_of_day"] + 1])
+            modEnvironment.setDayTime(values[params["timeofday"] + 1])
         end
         -- postRunFn = function (settings, params) ...
     }
