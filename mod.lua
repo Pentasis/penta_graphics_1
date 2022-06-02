@@ -24,15 +24,14 @@ function data()
                 },
             },
         },
-        options = {
-            daytime = { { "morning", _("Morning") }, { "noon", _("Noon") }, { "dusk", _("Dusk") }, { "night", _("Night") } },
-        },
+        options = {},
         runFn   = function(settings, modParams)
             local params = modParams[getCurrentModId()]
+            local timeValues = { "morning", "noon", "dusk", "night" }
+            -- local cloudValues = { "clear", "cloudy", "overcast" }
 
-            local values = { "morning", "noon", "dusk", "night" }
-
-            modEnvironment.setDayTime(values[params["timeofday"] + 1])
+            -- TODO: split up into time/weather
+            modEnvironment.setDayTime(timeValues[params["timeofday"] + 1])
         end
         -- postRunFn = function (settings, params) ...
     }
